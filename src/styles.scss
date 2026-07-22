@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+// Fonts — self-hosted woff2, keine Google-Fonts-CDN.
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/Archivo-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url('/assets/fonts/IBMPlexSans-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/IBMPlexMono-Medium.woff2') format('woff2');
+}
+
+// Design-Tokens
+:root {
+  --bg: #16171A; // Graphit
+  --surface: #202226;
+  --line: #33363B; // verzinktes Gerüstrohr
+  --text: #EDEBE7;
+  --muted: #85888E;
+  --accent: #D4A017; // Schalungsträger-Ocker
+  --max-width: 1200px;
+}
+
+// Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; // fixierte Navbar
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; // helle Schrift auf dunklem Grund sonst zu fett
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// Utility: breit getrackte Versalien für Hero-Wortmarke und Section-Titel.
+// Gezielt anwenden, nicht global auf alle Überschriften.
+.display-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+// Utility: Eyebrows, Labels, Zahlen.
+.mono {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
