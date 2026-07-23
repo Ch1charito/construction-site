@@ -1,0 +1,18 @@
+<section id="leistungen" class="leistungen">
+  <div class="leistungen-inner">
+    <header class="leistungen-header" appReveal>
+      <span class="eyebrow mono">Leistungen</span>
+      <h2 class="display-title">Alles aus einer Hand</h2>
+      <div class="leistungen-line"></div>
+    </header>
+
+    <div class="leistungen-list">
+      @for (item of leistungen; track item.title; let i = $index) {
+        <div class="leistungen-row" appReveal [style.--i]="i">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
