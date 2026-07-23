@@ -1,0 +1,144 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem clamp(1.5rem, 5vw, 4rem);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.wordmark {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  overflow: visible;
+}
+
+.guide {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation:
+    draw 0.3s ease forwards,
+    fade-out 0.4s ease 1.5s forwards;
+}
+
+.letter {
+  fill: var(--text);
+  fill-opacity: 0;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-opacity: 1;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation:
+    draw 0.6s ease forwards,
+    fill-in 0.4s ease 1.5s forwards;
+  animation-delay: calc(0.3s + var(--i) * 0.08s), 1.5s;
+}
+
+.gmbh,
+.hero-line,
+.tagline {
+  opacity: 0;
+  animation: fade-up 0.5s ease 1.9s forwards;
+}
+
+.gmbh {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.hero-line {
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+  margin: 0.5rem 0;
+}
+
+.tagline {
+  color: var(--muted);
+  max-width: 32ch;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  text-decoration: none;
+  opacity: 0;
+  animation: fade-up 0.5s ease 1.9s forwards;
+  transition: color 0.2s ease;
+}
+
+.scroll-cue:hover {
+  color: var(--accent);
+}
+
+.scroll-cue:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.scroll-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 24px;
+  background: currentColor;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill-in {
+  to {
+    fill-opacity: 1;
+    stroke-opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
