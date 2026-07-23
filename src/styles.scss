@@ -109,6 +109,29 @@ svg {
   font-weight: 400;
 }
 
+// Utility: kleines Label über Section-Titeln.
+.eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+// Scroll-Reveal: Klasse wird vom appReveal-Directive gesetzt
+// (src/app/shared/reveal.directive.ts), Animation läuft rein per CSS.
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 // Utility: nur für Screenreader, visuell ausgeblendet.
 .visually-hidden {
   position: absolute;

@@ -27,7 +27,8 @@ Angular 19, standalone Components, HTML + SCSS + TypeScript. Sonst nichts.
   weggelassen. Texte stehen direkt im Template.
 - Keine UI-Library, kein Tailwind, kein Animations-Framework.
 - `provideHttpClient()` wird gebraucht, aber nur fürs Kontaktformular.
-- Animationen ausschließlich per CSS, kein JS.
+- Animationen ausschließlich per CSS, kein JS. Ausnahme: Scroll-Reveal (siehe
+  eigener Abschnitt) — JS erkennt nur den Zeitpunkt, animiert wird per CSS.
 
 ## Aufbau, übernommen von der Referenz
 
@@ -98,6 +99,21 @@ Ein orchestrierter Moment, keine verstreuten Effekte.
 Kein Bildzeichen, kein Bagger-Icon, kein Haus-Symbol. Reine Wortmarke.
 
 `prefers-reduced-motion` überall respektieren.
+
+## Scroll-Reveal
+
+Section-Inhalte faden per `appReveal`-Directive ein, sobald sie in den
+Viewport scrollen (`src/app/shared/reveal.directive.ts`, wiederverwendbar,
+nicht pro Component neu bauen).
+
+- Directive hängt einen `IntersectionObserver` an, setzt bei Eintritt in den
+  Viewport die Klasse `.is-visible`, die eigentliche Animation (Opacity +
+  Transform) läuft über `.reveal` / `.reveal.is-visible` in `styles.scss`.
+- Nach dem ersten Auslösen `disconnect()` — kein wiederholtes Ein-/Ausblenden
+  beim Hoch-/Runterscrollen.
+- `prefers-reduced-motion: reduce`: Directive setzt `.is-visible` sofort ohne
+  Observer, Inhalt ist direkt sichtbar, kein Fade.
+- Anwendung: `appReveal`-Attribut auf das zu animierende Element setzen, fertig.
 
 ## Bilder
 
