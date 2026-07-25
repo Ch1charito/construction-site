@@ -140,18 +140,11 @@ karriere.jpg
 
 `ref-trockenbau.jpg` (die erste Variante) wird nicht verwendet.
 
-**Wichtig:** Das Bildset ist farblich uneinheitlich — kühles Grau, warmes
-Orange und gesättigtes Grün gemischt. Deshalb bekommen alle Referenzbilder
-eine einheitliche Behandlung:
-
-```scss
-filter: grayscale(1) contrast(1.05);
-transition: filter 0.4s ease;
-
-&:hover { filter: grayscale(0) contrast(1); }
-```
-
-Das löst die Inkonsistenz vollständig und macht den Hover bedeutungsvoll.
+Die Referenzbilder werden **nicht** in Graustufen gezeigt — sie sind von
+Anfang an farbig, kein Akzentfarb-Effekt beim Hover. Hover-Feedback (nur
+`@media (hover: hover)`, also nicht auf Touch-Geräten) läuft rein über
+Bewegung: leichtes Anheben der Kachel (`translateY`), minimaler Zoom aufs
+Bild im `overflow: hidden`-Rahmen.
 Der Hero bekommt zusätzlich eine dunkle Abdunklung, damit die Wortmarke steht.
 
 ## Kontaktformular

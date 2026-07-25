@@ -1,0 +1,26 @@
+<section id="referenzen" class="referenzen">
+  <div class="referenzen-inner">
+    <header class="referenzen-header" appReveal>
+      <span class="eyebrow mono">Referenzen</span>
+      <h2 class="display-title">Ausgewählte Projekte</h2>
+      <div class="referenzen-line"></div>
+    </header>
+
+    <div class="referenzen-grid">
+      @for (item of referenzen; track item.src; let i = $index) {
+        <figure class="referenz-item" appReveal [style.--i]="i">
+          <div class="referenz-frame">
+            <img
+              [src]="'/assets/images/' + item.src"
+              [attr.width]="item.width"
+              [attr.height]="item.height"
+              loading="lazy"
+              [alt]="item.alt"
+            />
+          </div>
+          <figcaption class="mono">{{ item.title }}</figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>

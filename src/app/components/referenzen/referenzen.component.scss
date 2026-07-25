@@ -1,0 +1,86 @@
+.referenzen {
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.referenzen-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.referenzen-header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.referenzen-line {
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+  margin: 1.25rem auto 0;
+}
+
+.referenzen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  align-items: stretch;
+}
+
+.referenz-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+}
+
+.referenz-frame {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.referenz-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.referenz-item figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  min-height: 2.8em;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  hyphens: none;
+}
+
+@media (hover: hover) {
+  .referenz-item {
+    transition: transform 0.3s ease;
+  }
+
+  .referenz-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .referenz-item img {
+    transition: transform 0.3s ease;
+  }
+
+  .referenz-item:hover img {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+  .referenzen-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .referenzen-grid {
+    grid-template-columns: 1fr;
+  }
+}
