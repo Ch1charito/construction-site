@@ -21,8 +21,7 @@ export class KontaktComponent {
 
   privacyAccepted = false;
 
-  mailTest = true;      // true = lokal simulieren (kein Versand), false = echt senden
-
+  mailTest = false;      
   post = {
     endPoint: 'https://bautista-gmbh.r-bautista-buschmann.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
