@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-kontakt',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './kontakt.component.html',
   styleUrl: './kontakt.component.scss'
 })

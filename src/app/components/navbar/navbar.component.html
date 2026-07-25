@@ -2,11 +2,11 @@
 
 <nav [class.scrolled]="scrolled()">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo display-title">Bautista</a>
+    <a [routerLink]="['/']" class="nav-logo display-title">Bautista</a>
 
     <ul class="nav-links">
-      @for (link of navLinks; track link.href) {
-        <li><a [href]="link.href">{{ link.label }}</a></li>
+      @for (link of navLinks; track link.fragment) {
+        <li><a [routerLink]="['/']" [fragment]="link.fragment">{{ link.label }}</a></li>
       }
     </ul>
 
@@ -23,8 +23,8 @@
   </div>
 
   <ul id="mobile-menu" class="mobile-menu" [class.open]="menuOpen()">
-    @for (link of navLinks; track link.href) {
-      <li><a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a></li>
+    @for (link of navLinks; track link.fragment) {
+      <li><a [routerLink]="['/']" [fragment]="link.fragment" (click)="closeMenu()">{{ link.label }}</a></li>
     }
   </ul>
 </nav>

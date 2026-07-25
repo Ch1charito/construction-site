@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, signal, viewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -10,11 +11,11 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   private sentinel = viewChild<ElementRef<HTMLElement>>('sentinel');
 
   readonly navLinks = [
-    { href: '#ueber-uns', label: 'Über uns' },
-    { href: '#leistungen', label: 'Leistungen' },
-    { href: '#referenzen', label: 'Referenzen' },
-    { href: '#karriere', label: 'Karriere' },
-    { href: '#kontakt', label: 'Kontakt' },
+    { fragment: 'ueber-uns', label: 'Über uns' },
+    { fragment: 'leistungen', label: 'Leistungen' },
+    { fragment: 'referenzen', label: 'Referenzen' },
+    { fragment: 'karriere', label: 'Karriere' },
+    { fragment: 'kontakt', label: 'Kontakt' },
   ];
 
   menuOpen = signal(false);

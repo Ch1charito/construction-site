@@ -6,10 +6,11 @@ import { LeistungenComponent } from '../components/leistungen/leistungen.compone
 import { ReferenzenComponent } from '../components/referenzen/referenzen.component';
 import { KarriereComponent } from '../components/karriere/karriere.component';
 import { KontaktComponent } from '../components/kontakt/kontakt.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @Component({
   selector: 'app-main-page',
-  imports: [NavbarComponent, HeroComponent, UeberUnsComponent, LeistungenComponent, ReferenzenComponent, KarriereComponent, KontaktComponent],
+  imports: [NavbarComponent, HeroComponent, UeberUnsComponent, LeistungenComponent, ReferenzenComponent, KarriereComponent, KontaktComponent, FooterComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })

@@ -56,7 +56,7 @@
                     [(ngModel)]="privacyAccepted"
                     required />
                 <label for="privacy">
-                    Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen und stimme zu. <span class="req">*</span>
+                    Ich habe die <a [routerLink]="['/datenschutz']">Datenschutzerklärung</a> gelesen und stimme zu. <span class="req">*</span>
                 </label>
             </div>
 
