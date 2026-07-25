@@ -1,0 +1,111 @@
+.karriere-header {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.karriere-header img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.karriere-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg) 82%, transparent),
+    color-mix(in srgb, var(--bg) 90%, transparent)
+  );
+}
+
+.karriere-header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  text-align: center;
+}
+
+.karriere-header-content p {
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+.karriere-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.karriere-list {
+  border-top: 1px solid var(--line);
+}
+
+.karriere-row {
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.karriere-role {
+  flex: 0 0 clamp(160px, 30%, 320px);
+  min-width: 0;
+}
+
+.karriere-role h3 {
+  font-size: 1.1rem;
+}
+
+.karriere-type {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.karriere-row p {
+  flex: 1;
+  min-width: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.karriere-cta {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  color: var(--muted);
+}
+
+.karriere-cta a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.karriere-cta a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .karriere-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .karriere-role {
+    flex-basis: auto;
+  }
+}

@@ -1,0 +1,34 @@
+<section id="karriere" class="karriere">
+  <div class="karriere-header">
+    <img
+      src="/assets/images/karriere.webp"
+      alt="Roter Schutzhelm auf einer Baustelle"
+      loading="lazy"
+    />
+    <div class="karriere-overlay"></div>
+
+    <div class="karriere-header-content" appReveal>
+      <span class="eyebrow mono">Karriere</span>
+      <h2 class="display-title">Werde Teil des Teams</h2>
+      <p>Wir suchen Handwerker und Anpacker, die mit uns bauen — vom Berufseinstieg bis zur Fachkraft.</p>
+    </div>
+  </div>
+
+  <div class="karriere-inner">
+    <div class="karriere-list">
+      @for (item of stellen; track item.title; let i = $index) {
+        <div class="karriere-row" appReveal [style.--i]="i">
+          <div class="karriere-role">
+            <h3>{{ item.title }}</h3>
+            <span class="mono karriere-type">{{ item.type }}</span>
+          </div>
+          <p>{{ item.description }}</p>
+        </div>
+      }
+    </div>
+
+    <p class="karriere-cta" appReveal [style.--i]="5">
+      Interesse? Schick uns deine <a href="#kontakt">Bewerbung</a>.
+    </p>
+  </div>
+</section>

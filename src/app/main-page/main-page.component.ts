@@ -4,10 +4,11 @@ import { HeroComponent } from '../components/hero/hero.component';
 import { UeberUnsComponent } from '../components/ueber-uns/ueber-uns.component';
 import { LeistungenComponent } from '../components/leistungen/leistungen.component';
 import { ReferenzenComponent } from '../components/referenzen/referenzen.component';
+import { KarriereComponent } from '../components/karriere/karriere.component';
 
 @Component({
   selector: 'app-main-page',
-  imports: [NavbarComponent, HeroComponent, UeberUnsComponent, LeistungenComponent, ReferenzenComponent],
+  imports: [NavbarComponent, HeroComponent, UeberUnsComponent, LeistungenComponent, ReferenzenComponent, KarriereComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })

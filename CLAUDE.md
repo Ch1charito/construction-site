@@ -48,7 +48,10 @@ Angular 19, standalone Components, HTML + SCSS + TypeScript. Sonst nichts.
 4. `leistungen` — fünf Karten: Rohbau, Ausbau (Trockenbau + Innenausbau),
    Sanierung & Renovierung, Straßenbau, Forst & Winterdienst
 5. `referenzen` — Bildraster mit sechs Projekten
-6. `karriere` — bewusst schlank, kurzer Aufruf, keine aufgeblähte Stellenbörse
+6. `karriere` — Bild-Kopf mit Aufruf, darunter konkrete offene Stellen als
+   schlichte Zeilenliste (Titel, Art, eine Zeile Beschreibung, gleiches
+   Zeilen-Layout wie `leistungen`) — kein Stellenbörse-Raster, keine Filter,
+   kein Bewerbungsformular
 7. `kontakt` — Formular, Logik 1:1 aus der Referenz
 8. `footer` — Links zu Impressum und Datenschutz
 
